@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: feign-test
+
+#feign:
+#  url:
+#    prefix: demo
+
+feign:
+  url:
+    demo:
+      prefix: http://localhost:8080/target_server
+#      prefix: https://jsonplaceholder.typicode.com/
+  client:
+    config:
+      default:
+        connect-timeout: 1000
+        read-timeout: 3000
+        logger-level: NONE
+      demo-client: # FeignClient name
+        connect-timeout: 1000
+        read-timeout: 10000
+        logger-level: HEADERS # 여기서 설정한 값 커스텀 로그에서 로그 레벨 변수에 할당 됨
+send:
+  auth:
+    key: send-auth-key-info
+
+sender:
+  id: sender-id-info
+
