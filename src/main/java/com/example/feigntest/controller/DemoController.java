@@ -11,7 +11,7 @@ public class DemoController {
 
     private final DemoService demoService;
 
-    @GetMapping("/1")
+    @GetMapping("/get")
     public String request_1() {
         return demoService.get();
     }
