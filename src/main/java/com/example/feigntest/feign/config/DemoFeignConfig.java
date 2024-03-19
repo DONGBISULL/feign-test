@@ -1,5 +1,6 @@
 package com.example.feigntest.feign.config;
 
+import com.example.feigntest.feign.interceptor.DemoRequestInterceptor;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import lombok.extern.slf4j.Slf4j;
@@ -24,4 +25,11 @@ public class DemoFeignConfig {
             log.info("Request Headers: {}", template.headers());
         };
     }
+
+    @Bean
+    public DemoRequestInterceptor demoRequestInterceptor(){
+        // staticName으로 지정한 이름으로 접근 가능
+        return DemoRequestInterceptor.of();
+    }
+
 }

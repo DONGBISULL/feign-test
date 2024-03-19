@@ -22,7 +22,8 @@ repositories {
 }
 
 ext {
-    springCloudVersion = '2021.0.8'
+    set('springCloudVersion' , '2021.0.8')
+    set('commonsUtilsVersion' , '3.12.0')
 }
 
 dependencyManagement {
@@ -45,6 +46,7 @@ dependencies {
     // 요청 매핑
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'
 
+    implementation "org.apache.commons:commons-lang3:${commonsUtilsVersion}"
 }
 
 tasks.named('test') {
