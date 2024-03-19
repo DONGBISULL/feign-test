@@ -36,8 +36,15 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
     // feign
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+
+    // 요청 매핑
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'
+
 }
 
 tasks.named('test') {
