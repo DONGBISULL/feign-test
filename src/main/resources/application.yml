@@ -6,17 +6,31 @@ spring:
 #  url:
 #    prefix: demo
 
+kakao:
+  client-id: 95d790efe94ad115e0de22651c04889e
+  login:
+      redirect-uri: http://localhost:8080/kakao-login
+      grant-type: authorization_code
 feign:
   url:
     demo:
       prefix: http://localhost:8080/target_server
-#      prefix: https://jsonplaceholder.typicode.com/
+    #      prefix: https://jsonplaceholder.typicode.com/
+    kakao:
+        login:
+         prefix: https://kauth.kakao.com
+        user:
+          prefix: https://kapi.kakao.com
   client:
     config:
       default:
         connect-timeout: 1000
         read-timeout: 3000
         logger-level: NONE
+      kakao-login-client: # FeignClient name
+        connect-timeout: 1000
+        read-timeout: 10000
+        logger-level: HEADERS
       demo-client: # FeignClient name
         connect-timeout: 1000
         read-timeout: 10000
