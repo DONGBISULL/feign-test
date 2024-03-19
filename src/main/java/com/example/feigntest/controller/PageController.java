@@ -26,12 +26,12 @@ public class PageController {
         return modelAndView;
     }
 
-    @GetMapping("/error")
-    public ModelAndView errorPage() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("error");
-        return modelAndView;
-    }
+//    @GetMapping("/error")
+//    public ModelAndView errorPage() {
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.setViewName("error");
+//        return modelAndView;
+//    }
 
 }
 
