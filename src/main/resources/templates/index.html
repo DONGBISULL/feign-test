@@ -4,9 +4,6 @@
     <title>Insert title here</title>
 </head>
 <body>
-<!--<a class="p-2" th:href="@{${@environment.getProperty('feign.url.kakao.login.prefix')} + '/oauth/authorize?client_id=' + ${@environment.getProperty('kakao.client-id')} + '&redirect_uri=http://localhost:8080/kakao-login&response_type=code'}">여기</a>>-->
-<!--<img th:src="@{/images/kakao_login_medium_narrow.png}" style="height:60px"/>-->
-<!--</a>-->
 <div th:if="${member != null}">
     <ul>
         <li th:text="|인가코드 = ${member?.kakaoLoginResponse?.accessToken}|">accessToken</li>
